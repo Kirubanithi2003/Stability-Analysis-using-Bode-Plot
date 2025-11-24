@@ -5,11 +5,9 @@ To analyse the stability of the system having open loop transfer function, G(S)=
 Computer with MATLAB software
 
 ## Theory:
-![WhatsApp Image 2025-11-19 at 11 19 54](https://github.com/user-attachments/assets/487a4619-f224-4e15-b819-7ae659e4f6c0)
-![WhatsApp Image 2025-11-19 at 11 19 56](https://github.com/user-attachments/assets/0f801a5d-b0c6-46f6-933b-75359b7a4d4c)
-![WhatsApp Image 2025-11-19 at 11 19 57](https://github.com/user-attachments/assets/0f4492cc-6946-48a2-bed0-fe168222bf1d)
-![WhatsApp Image 2025-11-19 at 11 19 58](https://github.com/user-attachments/assets/6c6cb8fb-dc08-4231-a7e4-00136bcfa771)
-
+![cs71](https://github.com/user-attachments/assets/6e470b95-68f5-4b16-9778-d2a266eded3d)
+![cs72](https://github.com/user-attachments/assets/11e220fc-2267-49c5-9b1b-b6b8fb79f398)
+![cs73](https://github.com/user-attachments/assets/d7582271-f911-40be-b5c7-1da51b80d4fa)
 ## Procedure:
 	Open MATLAB software
 	Open a new script file.
@@ -20,30 +18,26 @@ Computer with MATLAB software
 
 ## Program: 
 ```
-num=[1];
-den=[0.05 0.6 1 0];
-sys=tf(num,den)
+num = [1];
+den = [0.05 0.6 1  0];
+sys = tf(num,den)
 bode(sys)
 grid on;
-[gm pm wpc wgc]=margin(sys)
-gmindb=20*log10(gm)
-if(wpc>wgc)
+[Gm Pm Wpc Wgc] = margin(sys)
+GmindB = 20*iog10(Gm)
+if (wpc > wgc)
     disp('stable')
-elseif(wpc==wgc)
+elseif (Wpc == Wgc)
     disp('marginally stable')
-else
-    disp('unstable')
+else ('unstable')
 end
 ```
-
-
 ## Output:
-<img width="1920" height="1080" alt="CS EXP5" src="https://github.com/user-attachments/assets/a0f60270-4bf9-4fe6-8ea9-1d6efffa2fb2" />
-
+<img width="1722" height="999" alt="Screenshot 2025-11-16 232337" src="https://github.com/user-attachments/assets/efe9d7b8-bc86-4df9-9a89-264a6e7a51d8" />
 ## Result:
 Thus the bode plot for the given transfer function was drawn and verified using MATLAB. <br>
-Gain margin = 40db <br>
-Phase Margin =  70 degree<br>
-Gain crossover frequency = 1 rad/sec<br>
-Phase crossover frequency = 20 rad/sec<br>
-The system is  ------------
+Gain margin = 6.7082 (16.5330 dB)
+Phase Margin = 16.2940 deg Gain
+Gain crossover frequency = 0.8710 rad/s
+Phase crossover frequency = 4.4721 rad/s
+The system is stable
